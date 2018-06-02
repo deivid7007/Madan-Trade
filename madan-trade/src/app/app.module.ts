@@ -10,13 +10,18 @@ import { AboutComponent } from './components/about/about.component';
 import { HomeComponent } from './components/home/home.component';
 import { ContactsComponent } from './components/contacts/contacts.component';
 import { AdsComponent } from './components/ads/ads.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
 const appRoutes: Routes = [
 { path: '', redirectTo: '/home', pathMatch: 'full'},
 { path: 'home', component: HomeComponent},
 { path: 'about', component: AboutComponent },
 { path: 'contacts', component: ContactsComponent },
-{ path: 'ads', component: AdsComponent }
+{ path: 'ads', component: AdsComponent },
+{ path: 'login', component: LoginComponent },
+{ path: 'register', component: RegisterComponent }
+
 ];
 
 @NgModule({
@@ -28,7 +33,9 @@ const appRoutes: Routes = [
     AboutComponent,
     HomeComponent,
     ContactsComponent,
-    AdsComponent
+    AdsComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     RouterModule.forRoot(
