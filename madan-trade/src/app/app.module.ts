@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AngularFireModule } from 'angularfire2';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -12,6 +13,16 @@ import { ContactsComponent } from './components/contacts/contacts.component';
 import { AdsComponent } from './components/ads/ads.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+
+export const firebaseConfig = {
+    apiKey: "AIzaSyDGWKtNSQc_pc6kn5BtDPIiPZuHfJdMRuM",
+    authDomain: "madan-trade-46658.firebaseapp.com",
+    databaseURL: "https://madan-trade-46658.firebaseio.com",
+    projectId: "madan-trade-46658",
+    storageBucket: "madan-trade-46658.appspot.com",
+    messagingSenderId: "997704338374"
+};
+
 
 const appRoutes: Routes = [
 { path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -42,7 +53,8 @@ const appRoutes: Routes = [
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
     ),
-    BrowserModule
+    BrowserModule,
+    AngularFireModule.initializeApp(firebaseConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]
