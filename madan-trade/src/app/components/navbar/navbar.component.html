@@ -15,13 +15,16 @@
               <a class="nav-link" routerLink="/contacts" routerLinkActive="active">Contacts</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" routerLink="/ads" routerLinkActive="active">Ads</a>
+              <a class="nav-link" routerLink="/ads" *ngIf="isUserLogged()">Ads</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" routerLink="/login" routerLinkActive="active">Login</a>
+              <a class="nav-link" routerLink="/login" *ngIf="isUserLogged() == false">Login</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" routerLink="/register" routerLinkActive="active">Register</a>
+              <a class="nav-link" routerLink="/register" *ngIf="isUserLogged() == false">Register</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/home" *ngIf="isUserLogged()" (click)="logOut()">Logout</a>
             </li>
           </ul>
         </div>
