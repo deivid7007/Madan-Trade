@@ -12,6 +12,9 @@ import { ContactsComponent } from './components/contacts/contacts.component';
 import { AdsComponent } from './components/ads/ads.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { FormsModule } from '@angular/forms';
+import { AuthService } from './auth-service.service';
+import { AuthGuard } from './auth-guard';
 
 
 
@@ -45,9 +48,10 @@ const appRoutes: Routes = [
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
     ),
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [AuthService,AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
