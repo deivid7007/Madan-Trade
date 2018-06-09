@@ -1,0 +1,29 @@
+<form #adForm="ngForm" (ngSubmit)="onSubmit(adForm)">
+  <div class="form-group">
+    <label>Title</label>
+    <input class="form-control" name="title" #title="ngModel" [(ngModel)]="adService.selectedAd.title" placeholder="Ad title">
+  </div>
+  <div class="form-group">
+    <label>Description</label>
+    <input class="form-control" name="description" #description="ngModel" [(ngModel)]="adService.selectedAd.description" placeholder="Description">
+  </div>
+  <div class="form-group">
+    <label>Price</label>
+    <input class="form-control" name="price" #price="ngModel" [(ngModel)]="adService.selectedAd.price" placeholder="Item price">
+  </div>
+  <div class="form-group">
+    <label>Mobile number</label>
+    <input class="form-control" name="mobileNumber" #mobileNumber="ngModel" [(ngModel)]="adService.selectedAd.mobileNumber" placeholder="Mobile number">
+  </div>
+  <div class="form-group" type="hidden">
+    <input type="hidden" class="form-control" name="username" #username="ngModel" [(ngModel)]="adService.selectedAd.username" placeholder="Username">
+  </div>
+  <div class="form-group">
+    <button class="btn btn-defaut" type="submit">
+      <i class="fa fa-floppy-o"></i>
+      Submit</button>
+    <button class="btn btn-defaut" type="button" (click)="resetForm(adForm)">
+      <i class="fa fa-repeat"></i>
+      Reset</button>
+  </div>
+</form>
