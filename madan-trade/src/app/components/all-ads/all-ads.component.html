@@ -1,0 +1,10 @@
+<h6 class="text-center">Your ads</h6><br/>
+<table class="rable table-sm table-hover">
+  <tr *ngFor="let ad of adList">
+    <td>{{ad.title}}</td>
+    <td>{{ad.description}}</td>   
+    <td>{{ad.price}}</td>
+    <td>{{ad.mobileNumber}}</td>
+    <td>{{ad.username}}</td>
+  </tr>
+</table>

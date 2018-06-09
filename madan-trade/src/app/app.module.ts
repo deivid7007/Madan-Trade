@@ -24,6 +24,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AdService } from './components/ads/shared/ad.service';
 import { environment } from '../environments/environment';
 import { ToastrModule } from  'ngx-toastr';
+import { AllAdsComponent } from './components/all-ads/all-ads.component';
 
 
 
@@ -35,7 +36,8 @@ const appRoutes: Routes = [
 { path: 'contacts', component: ContactsComponent },
 { path: 'ads', component: AdsComponent },
 { path: 'login', component: LoginComponent },
-{ path: 'register', component: RegisterComponent }
+{ path: 'register', component: RegisterComponent },
+{ path: 'allAds', component: AllAdsComponent }
 
 ];
 
@@ -52,7 +54,8 @@ const appRoutes: Routes = [
     LoginComponent,
     RegisterComponent,
     AdComponent,
-    AdListComponent
+    AdListComponent,
+    AllAdsComponent
   ],
   imports: [
     RouterModule.forRoot(
