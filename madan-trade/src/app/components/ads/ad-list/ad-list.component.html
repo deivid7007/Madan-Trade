@@ -1,3 +1,15 @@
-<p>
-  ad-list works!
-</p>
+<h6 class="text-center">Your ads</h6><br/>
+<table class="rable table-sm table-hover">
+  <tr *ngFor="let ad of adList">
+    <td>{{ad.title}}</td>
+    <td>{{ad.price}}</td>
+    <td>
+      <a class="btn"(click)="onEdit(ad)">
+        <i class="fa fa-pencil-square-o"></i>
+      </a>
+      <a class="btn">
+          <i class="fa fa-trash-o" (click)="onDelete(ad.$key)"></i>
+        </a>
+    </td>
+  </tr>
+</table>

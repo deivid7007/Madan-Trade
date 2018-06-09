@@ -32,7 +32,7 @@ export class AdService {
       description: ad.description,
       price: ad.price,
       mobileNumber: ad.mobileNumber,
-      username: ad.username
+      username: sessionStorage.getItem("currentUser")
     }
     );
   }

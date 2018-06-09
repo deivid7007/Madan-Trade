@@ -1,4 +1,5 @@
 <form #adForm="ngForm" (ngSubmit)="onSubmit(adForm)">
+  <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="adService.selectedAd.$key">
   <div class="form-group">
     <label>Title</label>
     <input class="form-control" name="title" #title="ngModel" [(ngModel)]="adService.selectedAd.title" placeholder="Ad title">

@@ -14,14 +14,20 @@ export class AdComponent implements OnInit {
   constructor(public adService: AdService, public toastr : ToastrService) { }
 
   ngOnInit() {
-    this.adService.getData();
+    // this.adService.getData();
     this.resetForm();
   }
 
   onSubmit(adForm: NgForm) {
-    this.adService.insertAd(adForm.value);
+    if(adForm.value.$key == null){
+      this.adService.insertAd(adForm.value);
+      this.toastr.success('Submitted Successfully', 'Ad created')
+    }
+    else{
+      this.adService.updateAd(adForm.value);
+      this.toastr.success("Updated Successfully", "Ad register");
+    }
     this.resetForm(adForm);
-    this.toastr.success('Submitted Successfully', 'Ad created')
   }
 
   resetForm(adForm?: NgForm) {
