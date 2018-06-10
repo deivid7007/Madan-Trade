@@ -36,6 +36,7 @@ export class AdComponent implements OnInit {
     }
     this.adService.selectedAd = {
       $key: null,
+      imgUrl: "http://asianinteriorservices.com/wp-content/uploads/2018/04/noImg.png",
       title: '',
       description: '',
       price: 0,

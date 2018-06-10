@@ -1,6 +1,10 @@
 <form #adForm="ngForm" (ngSubmit)="onSubmit(adForm)">
   <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="adService.selectedAd.$key">
   <div class="form-group">
+    <label>Image URL</label>
+    <input class="form-control" name="imgUrl" #imgUrl="ngModel" [(ngModel)]="adService.selectedAd.imgUrl" placeholder="Image URL">
+  </div>
+  <div class="form-group">
     <label>Title</label>
     <input class="form-control" name="title" #title="ngModel" [(ngModel)]="adService.selectedAd.title" placeholder="Ad title">
   </div>

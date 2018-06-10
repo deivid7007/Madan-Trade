@@ -17,6 +17,7 @@ export class AdService {
 
   insertAd(ad: Ad) {
     this.adsList.push({
+      imgUrl: ad.imgUrl,
       title: ad.title,
       description: ad.description,
       price: ad.price,
@@ -28,6 +29,7 @@ export class AdService {
 
   updateAd(ad: Ad) {
     this.adsList.update(ad.$key, {
+      imgUrl: ad.imgUrl,
       title: ad.title,
       description: ad.description,
       price: ad.price,
