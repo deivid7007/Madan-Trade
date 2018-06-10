@@ -1,8 +1,9 @@
-<h6 class="text-center">Your ads</h6><br/>
+<h4 class="text-center">Your ads</h4><br/>
 <table class="rable table-sm table-hover">
   <tr *ngFor="let ad of adList">
-    <td>{{ad.title}}</td>
-    <td>{{ad.price}}</td>
+    <td><b>Title:</b> {{ad.title}}</td>
+    <td><b>Price:</b> {{ad.price}}</td>
+    <td><b>Mobile number:</b> {{ad.mobileNumber}}</td>
     <td>
       <a class="btn"(click)="onEdit(ad)">
         <i class="fa fa-pencil-square-o"></i>
