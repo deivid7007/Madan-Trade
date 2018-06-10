@@ -1,4 +1,4 @@
-<h6 class="text-center">Your ads</h6><br/>
+<!-- <h6 class="text-center">Your ads</h6><br/>
 <table class="rable table-sm table-hover">
   <tr *ngFor="let ad of adList">
     <td><img src="{{ad.imgUrl}}"/> </td>
@@ -8,4 +8,22 @@
     <td>{{ad.mobileNumber}}</td>
     <td>{{ad.username}}</td>
   </tr>
+</table> -->
+<table>
+  <tr *ngFor="let ad of adList">
+<div class="card">
+    <td><img class="card-img-top" src="{{ad.imgUrl}}" alt="Card image"></td>
+    <div class="card-body">
+      <td><h6 class="card-title">{{ad.title}}</h6></td>
+      <br/>
+      <td><p class="card-text"><b>Description:</b> {{ad.description}}</p></td>
+      <br/>
+      <td><p class="card-text"><b>Price:</b> {{ad.price}}</p></td>
+      <br/>
+      <td><p class="card-text"><b>Contact:</b> {{ad.mobileNumber}}</p></td>
+      <br/>
+      <td><p class="card-text"><b>Ad uploader:</b> {{ad.username}}</p></td>
+    </div>
+  </div>
+</tr>
 </table>

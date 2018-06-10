@@ -1,0 +1,7 @@
+table{
+    position: relative;
+    margin-left: 25%;
+}
+.card{
+    width: 120% !important;
+}
