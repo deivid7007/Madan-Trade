@@ -11,6 +11,7 @@ import { Ad } from '../ads/shared/ad.model';
 export class AllAdsComponent implements OnInit {
 
   adList: Ad[];
+  filteredList : Ad[];
 
   constructor(public adService: AdService) { }
 
@@ -22,9 +23,10 @@ export class AllAdsComponent implements OnInit {
         var y = element.payload.toJSON();
         y["$key"] = element.key;
         this.adList.push(y as Ad);
-        
       })
+      this.filteredList = [];
+      this.filteredList = this.adList.reverse();
     })
+    
   }
-
 }
