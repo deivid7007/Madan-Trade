@@ -12,6 +12,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class AdListComponent implements OnInit {
   adList: Ad[];
+  filteredList : Ad[];
 
   constructor(public adService: AdService, public toastr: ToastrService) { }
 
@@ -28,6 +29,8 @@ export class AdListComponent implements OnInit {
         if (y["username"] == sessionStorage.getItem("currentUser")) {
           this.adList.push(y as Ad);
         }
+        this.filteredList = [];
+        this.filteredList = this.adList.reverse();
       })
     })
   }

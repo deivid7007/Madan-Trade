@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { AdService } from '../shared/ad.service';
 import { NgForm } from '@angular/forms';
-import { ToastrService } from 'ngx-toastr'; 
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-ad',
@@ -11,7 +11,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class AdComponent implements OnInit {
 
-  constructor(public adService: AdService, public toastr : ToastrService) { }
+  constructor(public adService: AdService, public toastr: ToastrService) { }
 
   ngOnInit() {
     // this.adService.getData();
@@ -19,11 +19,11 @@ export class AdComponent implements OnInit {
   }
 
   onSubmit(adForm: NgForm) {
-    if(adForm.value.$key == null){
+    if (adForm.value.$key == null) {
       this.adService.insertAd(adForm.value);
       this.toastr.success('Submitted Successfully', 'Ad created')
     }
-    else{
+    else {
       this.adService.updateAd(adForm.value);
       this.toastr.success("Updated Successfully", "Ad register");
     }
@@ -42,7 +42,6 @@ export class AdComponent implements OnInit {
       price: 0,
       mobileNumber: '',
       username: sessionStorage.getItem("currentUser")
-
     }
   }
 
