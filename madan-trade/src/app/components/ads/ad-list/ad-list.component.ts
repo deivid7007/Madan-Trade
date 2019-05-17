@@ -22,9 +22,11 @@ export class AdListComponent implements OnInit {
       item.forEach(element => {
         var y = element.payload.toJSON();
         y["$key"] = element.key;
-        if(y["username"] == sessionStorage.getItem("currentUser"))
-        {
-        this.adList.push(y as Ad);
+        if (sessionStorage.getItem('currentUser') == '7deividmladenov007@gmail.com') {
+          this.adList.push(y as Ad);
+        }
+        if (y["username"] == sessionStorage.getItem("currentUser")) {
+          this.adList.push(y as Ad);
         }
       })
     })
